@@ -66,7 +66,7 @@ class AnhedonicModelA:
             means = torch.tensor(mean_acts[layer_idx, neurons], dtype=torch.bfloat16).to("cuda")
             def _make(i, m):
                 def _hook(module, _in, out):
-                    out[:, -1, i] = m.unsqueeze(0).unsqueeze(0)
+                    out[:, :, i] = m.unsqueeze(0).unsqueeze(0)
                     return out
                 return _hook
             self._layers[layer_idx].mlp.act_fn.register_forward_hook(
