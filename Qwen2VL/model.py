@@ -107,7 +107,7 @@ class AnhedonicModelA:
 
 
 # ── Module-level API ───────────────────────────────────────────────────────
-model: "AnhedonicModelA" = None  # type: ignore
+model: "AnhedonicModelA" = None  
 
 def _init():
     global model
